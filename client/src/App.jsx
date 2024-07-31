@@ -26,10 +26,10 @@ function App() {
         </p>
       </div>
       <div className='buttoner'>
-        <button onClick={() => fetch('https://vercel-deploy-test-server-nmu3kvq6d-toms-projects-3a15c38b.vercel.app/', { method: 'GET' })} className='get-btn'>
+        <button onClick={() => fetch('https://vercel-deploy-test-server-nmu3kvq6d-toms-projects-3a15c38b.vercel.app/')} className='get-btn'>
           GET request
         </button>
-        <button onClick={() => fetch('https://vercel-deploy-test-server-nmu3kvq6d-toms-projects-3a15c38b.vercel.app/', { method: 'POST' })} className='post-btn'>
+        <button onClick={() => fetch('https://vercel-deploy-test-server-nmu3kvq6d-toms-projects-3a15c38b.vercel.app/')} className='post-btn'>
           POST request
         </button>
       </div>
