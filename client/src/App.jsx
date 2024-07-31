@@ -1,10 +1,30 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+
+  const sendGet = () => {
+    const requestOptions = {
+      method: 'GET'
+    };
+  fetch('https://vercel-deploy-test-server-nmu3kvq6d-toms-projects-3a15c38b.vercel.app/')
+    .then(response => response.json())
+    .then(data => setPostId(data.id));
+  }
+
+  const sendPost = () => {
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ title: 'React Hooks POST Request Example' })
+    };
+  fetch('https://vercel-deploy-test-server-nmu3kvq6d-toms-projects-3a15c38b.vercel.app/', requestOptions)
+    .then(response => response.json())
+    .then(data => setPostId(data.id));
+  }
 
   return (
     <>
@@ -26,10 +46,10 @@ function App() {
         </p>
       </div>
       <div className='buttoner'>
-        <button onClick={() => fetch('https://vercel-deploy-test-server-nmu3kvq6d-toms-projects-3a15c38b.vercel.app/')} className='get-btn'>
+        <button onClick={sendGet} className='get-btn'>
           GET request
         </button>
-        <button onClick={() => fetch('https://vercel-deploy-test-server-nmu3kvq6d-toms-projects-3a15c38b.vercel.app/')} className='post-btn'>
+        <button onClick={sendPost} className='post-btn'>
           POST request
         </button>
       </div>
