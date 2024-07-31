@@ -25,6 +25,14 @@ function App() {
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
       </div>
+      <div className='buttoner'>
+        <button onClick={() => fetch('https://vercel-deploy-test-server-nmu3kvq6d-toms-projects-3a15c38b.vercel.app/', { method: 'GET' })} className='get-btn'>
+          GET request
+        </button>
+        <button onClick={() => fetch('https://vercel-deploy-test-server-nmu3kvq6d-toms-projects-3a15c38b.vercel.app/', { method: 'POST' })} className='post-btn'>
+          POST request
+        </button>
+      </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
